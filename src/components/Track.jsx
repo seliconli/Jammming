@@ -3,7 +3,7 @@ import React from 'react';
 export default function Track(props){
     return(
         <div className="Track">
-
+            <img src="path/to/album-cover.png" alt="Album Cover" className="Album-cover" />
             <div className="Track-information">
                 <h3 className="Song-title">Song Title (Hardcoded)</h3>
                 <p className="Song-artist">Artist Name | Album Name</p>
