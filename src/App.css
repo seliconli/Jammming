@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: 'Roboto', sans-serif; */
+    background-color: #000000;
+    background-image: url(./assets/background_view.png);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    /* overflow: hidden; */
+}
+
+.StateBar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    width: 100%;
+    height: 56px;
+    background-color: #000000c7;
+    backdrop-filter: blur(50px);
+    color: #fff;
+}
+
+.logo-jam {
+    position: absolute;
+    width: 148px;
+    color: #fff;
+    bottom: -24px;
+}
+
+.SearchBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 56px;
+    margin: 120px 0;
+    background-color: #ffffffc8;
+    border-radius: 8px;
+}
+
+.SearchBar input {
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 550;
+    /* text-align: center; */
+    outline: none;
+    color: #000000;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.SearchBar input::placeholder {
+    font-weight: 500;
+    color: #00000031;}
+    
+
+.SearchButton {
+    width: 112px;
+    height: 40px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 8px;
+}
+
+.SearchButton:hover {
+  background-color: #242424;
+}
+
+.SearchButton:active {
+  transform: scale(0.98);
+}
+
+.App-twolists {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 120px;
+}
+
+.SearchBar{
+
+}
+
+.PlayList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 32px;
+    /* justify-content: center; */
+    width: 480px;
+    height: 480px;
+    /* max-height: 500px; */
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(50px);
+    border-radius: 8px;
+}
+
+.TrackList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 16px; */
+    /* justify-content: center; */
+    width: 100%;
+    max-height: 300px;
+    height:fit-content;
+    overflow-y: auto;
+}
+
+.Track {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    /* padding: 0 16px; */
+    border-radius: 8px;
+}
+
+.PlayList-save {
+    width: 416px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

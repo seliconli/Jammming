@@ -1,10 +1,9 @@
 import React from 'react';
-import Track from './Track';
-import TrackList from './TrackList';
-import PlayList from './PlayList';
-import SearchBar from './SearchBar';
-import SearchResult from './SearchResult';
-import StateBar from './StateBar';
+import PlayList from './components/PlayList';
+import SearchBar from './components/SearchBar';
+import SearchResult from './components/SearchResult';
+import StateBar from './components/StateBar';
+import './App.css';
 
 export default function App() {
   return (
@@ -12,8 +11,10 @@ export default function App() {
       {/* <h1>Ja<span className="highlight">mmm</span>ing</h1> */}
       <StateBar />
       <SearchBar />
-      <SearchResult />
-      <PlayList />
+      <div className="App-twolists">
+        <SearchResult />
+        <PlayList />
+      </div>
     </div>
   );
 }
