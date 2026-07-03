@@ -5,40 +5,43 @@
 }
 
 body {
-    /* font-family: 'Roboto', sans-serif; */
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
     background-color: #000000;
     background-image: url(./assets/background_view.png);
     background-size: cover;
     background-attachment: fixed;
-    color: #fff;
 }
 
 .App {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     align-items: center;
-    /* overflow: hidden; */
+    justify-content: space-between;
+    gap: 80px;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .StateBar {
     position: sticky;
     top: 0;
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     width: 100%;
     height: 56px;
+    color: #fff;
     background-color: #000000c7;
     backdrop-filter: blur(50px);
-    color: #fff;
+    flex: none;
+    /* align-items: center; */
 }
 
 .logo-jam {
     position: absolute;
+    bottom: -24px;
     width: 148px;
     color: #fff;
-    bottom: -24px;
 }
 
 .SearchBar {
@@ -48,108 +51,136 @@ body {
     justify-content: center;
     width: 400px;
     height: 56px;
-    margin: 120px 0;
     background-color: #ffffffc8;
     border-radius: 8px;
+    flex: none;
+    /* margin: 80px 0; */
 }
 
 .SearchBar input {
     width: 100%;
     height: 100%;
     padding: 0 16px;
-    border: none;
-    border-radius: 8px;
+    color: #000000;
     font-size: 16px;
     font-weight: 550;
-    /* text-align: center; */
-    outline: none;
-    color: #000000;
     background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    outline: none;
     transition: all 0.2s ease;
+    /* text-align: center; */
 }
 
 .SearchBar input::placeholder {
+    color: #00000031;
     font-weight: 500;
-    color: #00000031;}
-    
+}
 
 .SearchButton {
     width: 112px;
     height: 40px;
-    background-color: #000000;
+    margin: 0 8px;
     color: #fff;
+    background-color: #000000;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin: 0 8px;
 }
 
 .SearchButton:hover {
-  background-color: #242424;
+    background-color: #242424;
 }
 
 .SearchButton:active {
-  transform: scale(0.98);
+    transform: scale(0.98);
 }
 
 .App-twolists {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
-    margin-bottom: 120px;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 40px;
+    flex: 1 1 0;
+    min-height: 0;
 }
 
-.SearchBar{
 
-}
-
-.PlayList {
+.PlayList,
+.SearchResult {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     gap: 16px;
-    padding: 32px;
-    /* justify-content: center; */
     width: 480px;
-    height: 480px;
-    /* max-height: 500px; */
+    padding: 32px 24px;
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(50px);
     border-radius: 8px;
+    height: 100%;
 }
 
 .TrackList {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* gap: 16px; */
-    /* justify-content: center; */
+    justify-content: flex-start;
     width: 100%;
-    max-height: 300px;
-    height:fit-content;
     overflow-y: auto;
+    flex: 0 1 auto;
+    /* flex-grow: 1; */
+    /* gap: 16px; */
+    /* max-height: 300px; */
+    /* max-height:300px ; */
 }
 
 .Track {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     height: 80px;
-    /* padding: 0 16px; */
     border-radius: 8px;
+    flex: none;
 }
 
 .PlayList-save {
     width: 416px;
     height: 40px;
-    font-size: 16px;
-    font-weight: 500;
-    background-color: #ffffff;
+    flex: none;
     color: #000;
+    font-size: 16px;
+    font-weight: 550;
+    background-color: #ffffff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.Album-cover {
+    width: 40px;
+    height: 40px;
+    /* margin-right: 16px; */
+    border-radius: 50%;
+    mask-image: radial-gradient(circle at center, transparent 11%, rgba(0, 0, 0, .3) 11.1%, rgba(0, 0, 0, .3) 20%, black 20.1%);
+    /* mask-image: radial-gradient(circle at center, transparent 15%, black 15.5%); */
+    /* object-fit: cover; */
+    background-image: url(./assets/border.png),conic-gradient(from 15deg,
+            rgba(255, 255, 255, 0.05) 0%,
+            rgba(255, 255, 255, 0.6) 15%,
+            rgba(255, 255, 255, 0.05) 30%,
+            rgba(255, 255, 255, 0.05) 50%,
+            rgba(255, 255, 255, 0.6) 65%,
+            rgba(255, 255, 255, 0.05) 80%,
+            rgba(255, 255, 255, 0.05) 100%), url(./assets/music1.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: normal,overlay,normal;
+
+    /* box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 
+              inset 0 0 4px rgba(255, 255, 255, 0.3); */
+    /* background-color: #000; */
 }
