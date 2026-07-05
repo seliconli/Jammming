@@ -1,12 +1,12 @@
 import React from 'react';
 import Track from './Track';
 
-export default function TrackList(props){
+export default function TrackList({ tracks, onAdd, onRemove, isRemoved }) {
     return(
         <div className="TrackList">
-            <Track />
-            <Track />
-            <Track />
+            {
+                tracks && tracks.map(track => <Track key={track.id} track={track} onAdd={onAdd} onRemove={onRemove} isRemoved={isRemoved} />)
+            }
         </div>
     )
 }
