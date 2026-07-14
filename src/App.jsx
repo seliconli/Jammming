@@ -6,19 +6,12 @@ import SearchResult from './components/SearchResult';
 import StateBar from './components/StateBar';
 import './App.css';
 import musicCover from './assets/music1.png';
-
+import Netease from './util/Netease.js';
 
 export default function App() {
-  const [searchResults, setSearchResults] = useState([
-    { id: 1, name: "Track 1", artist: "Artist 1", album: "Album 1" , cover: musicCover },
-    { id: 2, name: 'Yellow', artist: 'Coldplay', album: 'Parachutes' ,cover: musicCover},
-    { id: 3, name: 'Viva La Vida', artist: 'Coldplay', album: 'Death and All His Friends' ,cover: musicCover },
-    { id: 4, name: 'Fix You', artist: 'Coldplay', album: 'X&Y' , cover: musicCover}
-  ]);
-  // setSearchResults()
-
+  const [searchResults, setSearchResults] = useState([]);
   const [title, setTitle] = useState('My Playlist');
-  function handChange({target}){
+  function handChange({ target }) {
     setTitle(target.value);
   }
 
@@ -34,16 +27,23 @@ export default function App() {
     setPlaylistTracks(prev => prev.filter(item => item.id !== track.id));
   }
 
-
+  async function search(term) {
+    if (!term) return;
+    console.log("正在搜索：", term);
+    const results = await Netease.search(term);
+    console.log("搜索结果：", results);
+    setSearchResults(results);
+  }
 
   return (
     <div className="App">
       <StateBar />
-      <SearchBar />
+      <SearchBar onSearch={search} />
       <div className="App-twolists">
         <SearchResult searchResults={searchResults} onAdd={addTrack} isRemoved={false} />
         <PlayList title={title} tracks={playlistTracks} onRemove={removeTrack} handChange={handChange} isRemoved={true} />
       </div>
     </div>
   );
+
 }
