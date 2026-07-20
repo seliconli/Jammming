@@ -1,12 +1,12 @@
 import React from 'react';
 import TrackList from './TrackList';
 
-export default function SearchResult({ searchResults, onAdd, isRemoved }) {
+export default function SearchResult({ searchResults, onAdd, isRemoved,currentPlayId,onPlay }) {
     
     return(
         <div className="SearchResult">
             <h2>Results</h2>
-            <TrackList tracks={searchResults} onAdd={onAdd} isRemoved={isRemoved}/>
+            <TrackList tracks={searchResults} onAdd={onAdd} isRemoved={isRemoved} currentPlayId={currentPlayId} onPlay={onPlay}/>
         </div>
     )
 }

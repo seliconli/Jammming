@@ -338,6 +338,37 @@ body {
     overflow: hidden;
 }
 
+.player{
+    display: flex;
+    flex-direction: row;
+    /* width */
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff4f;
+    padding: 0 16px;
+    height: 32px;
+    border-radius: 100px;
+    flex: .7 1 0;
+}
+
+.progress-bar{ 
+    background-color: #0000004d;
+    height: 6px;
+    /* width: 80px; */
+    flex:1 1 0;
+    border-radius: 100px;
+}
+.progress-bar .progress{ 
+    background-color: #ffffffd2;
+    height: 100%;
+    border-radius: 100px;
+}
+
+.player a{
+    color: #ffffffa7;
+    font-size: 11px;
+    text-decoration: none;
+}
 
 
 .Track-action {

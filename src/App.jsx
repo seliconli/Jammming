@@ -11,6 +11,7 @@ import Netease from './util/Netease.js';
 export default function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [title, setTitle] = useState('My Playlist');
+  const [currentPlayId, setCurrentPlayId] = useState(null);
   function handChange({ target }) {
     setTitle(target.value);
   }
@@ -40,8 +41,8 @@ export default function App() {
       <StateBar />
       <SearchBar onSearch={search} />
       <div className="App-twolists">
-        <SearchResult searchResults={searchResults} onAdd={addTrack} isRemoved={false} />
-        <PlayList title={title} tracks={playlistTracks} onRemove={removeTrack} handChange={handChange} isRemoved={true} />
+        <SearchResult searchResults={searchResults.filter(track => !playlistTracks.some(items => items.id === track.id))} onAdd={addTrack} isRemoved={false} currentPlayId={currentPlayId} onPlay={setCurrentPlayId}/>
+        <PlayList title={title} tracks={playlistTracks} onRemove={removeTrack} handChange={handChange} isRemoved={true} currentPlayId={currentPlayId} onPlay={setCurrentPlayId} />
       </div>
     </div>
   );

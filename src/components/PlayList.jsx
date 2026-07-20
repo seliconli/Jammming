@@ -1,7 +1,7 @@
 import React from 'react';
 import TrackList from './TrackList';
 
-export default function PlayList({ title, tracks, onRemove, handChange, isRemoved }) {
+export default function PlayList({ title, tracks, onRemove, handChange, isRemoved,currentPlayId,onPlay }) {
     return (
         <div className="PlayList">
             {/* <h2>{title}</h2> */}
@@ -21,7 +21,7 @@ export default function PlayList({ title, tracks, onRemove, handChange, isRemove
                     ></path>
                 </svg>
             </div>
-            <TrackList tracks={tracks} onRemove={onRemove} isRemoved={isRemoved} />
+            <TrackList tracks={tracks} onRemove={onRemove} isRemoved={isRemoved} currentPlayId={currentPlayId} onPlay={onPlay}/>
             <button className="PlayList-save">SAVE TO SPOTIFY</button>
         </div>
     )
